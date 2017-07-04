@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/listview_arrayadapter_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ArrayAdapter适配器"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/listview_simpleadapter_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SimpleAdapter适配器"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/listview_baseadapter_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BaseAdapter适配器"
+                android:textAllCaps="false"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/right_scope"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>
