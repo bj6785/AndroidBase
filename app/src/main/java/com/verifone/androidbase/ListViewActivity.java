@@ -1,15 +1,25 @@
 package com.verifone.androidbase;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class ListViewActivity extends AppCompatActivity implements View.OnClickListener {
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
+
+public class ListViewActivity extends FragmentActivity implements View.OnClickListener {
 
     private Button list_arrayadapter_bt;
     private Button list_simpleadapter_bt;
     private Button list_baseadapter_bt;
+
+    private ArrayAdapterListViewFragment mArrayAdapterListViewFragment;
+    private SimpleAdapterListViewFragment mSimpleAdapterListViewFragment;
+    private BaseAdapterListviewFragment mBaseAdapterListviewFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +36,29 @@ public class ListViewActivity extends AppCompatActivity implements View.OnClickL
         list_baseadapter_bt.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View v) {
+        FragmentManager mFragmentManager = getFragmentManager();
+        FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
+
         switch (v.getId()) {
             case R.id.listview_arrayadapter_bt:
+                mArrayAdapterListViewFragment = new ArrayAdapterListViewFragment();
+                mFragmentTransaction.replace(R.id.right_scope, mArrayAdapterListViewFragment);
+                mFragmentTransaction.commit();
                 break;
             case R.id.listview_simpleadapter_bt:
+                mSimpleAdapterListViewFragment = new SimpleAdapterListViewFragment();
+                mFragmentTransaction.replace(R.id.right_scope, mSimpleAdapterListViewFragment);
+                mFragmentTransaction.commit();
                 break;
             case R.id.listview_baseadapter_bt:
+                mBaseAdapterListviewFragment = new BaseAdapterListviewFragment();
+                mFragmentTransaction.replace(R.id.right_scope, mBaseAdapterListviewFragment);
+                mFragmentTransaction.commit();
                 break;
         }
+
     }
 }
