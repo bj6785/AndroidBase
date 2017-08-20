@@ -2,6 +2,7 @@ package com.verifone.androidbase;
 
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class BaseAdapterListviewFragment extends Fragment {
     private ListView mListView;
@@ -51,16 +54,24 @@ public class BaseAdapterListviewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_listview_baseadapter, container, false);
         mListView = (ListView) view.findViewById(R.id.baseadapter_listview);
 
-        MyBaseAdapter myBaseAdapter = new MyBaseAdapter();
+        MyBaseAdapter myBaseAdapter = new MyBaseAdapter(getActivity());
         mListView.setAdapter(myBaseAdapter);
         return view;
     }
 
     class MyBaseAdapter extends BaseAdapter {
+        private LayoutInflater mLayoutInflater;
+        private int index = 0;
+        private ArrayList<HashMap<String, Object>> arraylist;
+
+        public MyBaseAdapter(Context context) {
+            mLayoutInflater = LayoutInflater.from(context);
+            arraylist = getListData();
+        }
 
         @Override
         public int getCount() {
-            return 0;
+            return getListData().size();
         }
 
         @Override
@@ -75,7 +86,26 @@ public class BaseAdapterListviewFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+
+            ViewHolder viewHolder = null;
+            if (convertView == null) {
+                viewHolder = new ViewHolder();
+                convertView = mLayoutInflater.inflate(R.layout.base_adapter_list_item, null);
+                viewHolder.title = (TextView) convertView.findViewById(R.id.title);
+                viewHolder.content = (TextView) convertView.findViewById(R.id.content);
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+            viewHolder.title.setText(arraylist.get(position).get("LineNumber").toString());
+            viewHolder.content.setText(arraylist.get(position).get("LineContent").toString());
+            return convertView;
         }
+    }
+
+    class ViewHolder {
+        TextView title;
+        TextView content;
     }
 }
