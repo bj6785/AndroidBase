@@ -21,9 +21,13 @@
             android:exported="true"
             android:screenOrientation="locked">
         </activity>
-
         <activity
             android:name=".ListViewActivity"
+            android:exported="true"
+            android:screenOrientation="locked">
+        </activity>
+        <activity
+            android:name=".ExpandListViewActivity"
             android:exported="true"
             android:screenOrientation="locked">
         </activity>
