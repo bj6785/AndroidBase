@@ -1,4 +1,4 @@
-package com.verifone.androidbase;
+package com.verifone.androidbase.ui;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.verifone.androidbase.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

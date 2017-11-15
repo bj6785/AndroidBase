@@ -1,4 +1,4 @@
-package com.verifone.androidbase;
+package com.verifone.androidbase.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.verifone.androidbase.R;
 
 public class ArrayAdapterListViewFragment extends Fragment {
     private ListView mListView;

@@ -1,4 +1,4 @@
-package com.verifone.androidbase;
+package com.verifone.androidbase.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.SimpleAdapter;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.verifone.androidbase.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.verifone.androidbase.ui.ExpandListViewActivity;
+import com.verifone.androidbase.ui.ListViewActivity;
+
 public class UiActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button ui_list_bt;

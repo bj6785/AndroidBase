@@ -1,4 +1,4 @@
-package com.verifone.androidbase;
+package com.verifone.androidbase.ui;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.verifone.androidbase.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

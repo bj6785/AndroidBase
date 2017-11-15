@@ -14,4 +14,11 @@
         android:layout_height="wrap_content"
         android:text="UI"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/camera_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="camera"
+        android:textSize="20sp"/>
 </LinearLayout>
