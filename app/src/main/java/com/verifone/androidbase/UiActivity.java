@@ -8,11 +8,13 @@ import android.widget.Button;
 
 import com.verifone.androidbase.ui.ExpandListViewActivity;
 import com.verifone.androidbase.ui.ListViewActivity;
+import com.verifone.androidbase.ui.SlideListActivity;
 
 public class UiActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button ui_list_bt;
     private Button ui_expand_list_bt;
+    private Button ui_slide_list_bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +22,11 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_ui);
         ui_list_bt = (Button) findViewById(R.id.ui_list_bt);
         ui_expand_list_bt = (Button) findViewById(R.id.ui_expand_list_bt);
+        ui_slide_list_bt = (Button) findViewById(R.id.ui_slide_list_bt);
+
         ui_list_bt.setOnClickListener(this);
         ui_expand_list_bt.setOnClickListener(this);
+        ui_slide_list_bt.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +39,10 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.ui_expand_list_bt:
                 intent.setClass(UiActivity.this, ExpandListViewActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ui_slide_list_bt:
+                intent.setClass(UiActivity.this, SlideListActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -42,6 +42,11 @@
             android:exported="true"
             android:screenOrientation="locked">
         </activity>
+        <activity
+            android:name=".ui.SlideListActivity"
+            android:exported="true"
+            android:screenOrientation="locked">
+        </activity>
     </application>
 
 </manifest>
