@@ -12,6 +12,10 @@ import com.verifone.androidbase.ui.widgets.SlideDeleteListView;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/*****************************************************************
+ * 说明详见http://blog.csdn.net/ausboyue/article/details/52565237 *
+ *****************************************************************/
+
 public class SlideListActivity extends Activity {
     private SlideDeleteListView lv_templates;
     private SlideListItemAdapter adapter;
