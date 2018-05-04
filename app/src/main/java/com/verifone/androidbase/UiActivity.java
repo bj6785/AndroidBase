@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.verifone.androidbase.ui.ExpandListViewActivity;
+import com.verifone.androidbase.ui.LaunchModeActivity;
 import com.verifone.androidbase.ui.ListViewActivity;
 import com.verifone.androidbase.ui.SlideListActivity;
 
@@ -15,7 +16,7 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
     private Button ui_list_bt;
     private Button ui_expand_list_bt;
     private Button ui_slide_list_bt;
-
+    private Button ui_launch_mode_bt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,16 +24,22 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
         ui_list_bt = (Button) findViewById(R.id.ui_list_bt);
         ui_expand_list_bt = (Button) findViewById(R.id.ui_expand_list_bt);
         ui_slide_list_bt = (Button) findViewById(R.id.ui_slide_list_bt);
+        ui_launch_mode_bt = (Button) findViewById(R.id.ui_launch_mode_bt);
 
         ui_list_bt.setOnClickListener(this);
         ui_expand_list_bt.setOnClickListener(this);
         ui_slide_list_bt.setOnClickListener(this);
+        ui_launch_mode_bt.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
+            case R.id.ui_launch_mode_bt:
+                intent.setClass(UiActivity.this, LaunchModeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.ui_list_bt:
                 intent.setClass(UiActivity.this, ListViewActivity.class);
                 startActivity(intent);
