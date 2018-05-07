@@ -51,7 +51,6 @@
         <activity
             android:name=".ui.LaunchModeActivity"
             android:exported="true"
-            android:launchMode="standard"
             android:screenOrientation="locked">
         </activity>
         <activity

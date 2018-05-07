@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.orhanobut.logger.Logger;
 import com.verifone.androidbase.R;
 import com.verifone.androidbase.ui.launchMode.SingleInstanceModeActivity;
 import com.verifone.androidbase.ui.launchMode.SingleTaskModeActivity;
@@ -27,6 +28,7 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_ui);
+        Logger.d("onCreate: " + this.toString() + ", taskId=" + this.getTaskId());
 
         modeStandard = findViewById(R.id.launch_mode_standard);
         modeStandard.setOnClickListener(this);
@@ -60,6 +62,8 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
                  * (02) 当A和B的taskAffinity不同时：第一次创建B的实例时，会启动新的task，然后将B添加到新建的task中；否则，将B所在task中位于B之上的全部Activity都删除，然后跳转到B中。
                  */
                 intent = new Intent(this, SingleTaskModeActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
 
@@ -69,5 +73,10 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
 
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        Logger.d("onNewIntent: intent=" + intent + ", activity=" + this + ", taskId=" + this.getTaskId());
     }
 }
