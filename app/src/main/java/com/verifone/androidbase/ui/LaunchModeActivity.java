@@ -30,13 +30,13 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
         modeStandard = findViewById(R.id.launch_mode_standard);
         modeStandard.setOnClickListener(this);
 
-        modeSingleTop= findViewById(R.id.launch_mode_singleTop);
+        modeSingleTop = findViewById(R.id.launch_mode_singleTop);
         modeSingleTop.setOnClickListener(this);
 
         modeSingleTask = findViewById(R.id.launch_mode_singleTask);
         modeSingleTask.setOnClickListener(this);
 
-        modeSingleInstance= findViewById(R.id.launch_mode_singleInstance);
+        modeSingleInstance = findViewById(R.id.launch_mode_singleInstance);
         modeSingleInstance.setOnClickListener(this);
     }
 
@@ -53,8 +53,11 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
                 startActivity(intent);
                 break;
             case R.id.launch_mode_singleTask:
-                // 如果taskAffinity相同，那么如果要创建的activity不存在于当前task，那么会简单在当前栈顶创建，如果存在，则删除掉此activity之上的所有activity，并显示此activit
-                //如果taskAffinity不相同，要创建的activity会新创建一个taskAffinity对应的task，并把此activity加入到栈，但是如果已经存在对应的task，则删除掉所有此activity之上的所有activity，并显示此activity
+                /*
+                 * 总结来说：singleTask的结论与android:taskAffinity相关。以A启动B来说
+                 * (01) 当A和B的taskAffinity相同时：第一次创建B的实例时，并不会启动新的task，而是直接将B添加到A所在的task；否则，将B所在task中位于B之上的全部Activity都删除，然后跳转到B中。
+                 * (02) 当A和B的taskAffinity不同时：第一次创建B的实例时，会启动新的task，然后将B添加到新建的task中；否则，将B所在task中位于B之上的全部Activity都删除，然后跳转到B中。
+                 */
                 intent = new Intent(this, SingleTaskModeActivity.class);
                 startActivity(intent);
                 break;
