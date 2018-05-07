@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.verifone.androidbase.R;
+import com.verifone.androidbase.ui.launchMode.SingleInstanceModeActivity;
 import com.verifone.androidbase.ui.launchMode.SingleTaskModeActivity;
 import com.verifone.androidbase.ui.launchMode.SingleTopModeActivity;
 import com.verifone.androidbase.ui.launchMode.StandardModeActivity;
@@ -62,6 +63,10 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
                 startActivity(intent);
                 break;
 
+            case R.id.launch_mode_singleInstance:
+                intent = new Intent(this, SingleInstanceModeActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }

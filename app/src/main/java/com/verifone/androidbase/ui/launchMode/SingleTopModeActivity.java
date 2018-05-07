@@ -13,8 +13,8 @@ public class SingleTopModeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_launch_single_top);
-        Logger.d("oncreate...");
+        setContentView(R.layout.activity_launch_4modes);
+        Logger.d("onCreate: " + this.toString() + ", taskId=" + this.getTaskId());
     }
 
     public void onJumpMySelf(View view) {
@@ -29,6 +29,6 @@ public class SingleTopModeActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        Logger.d("onNewIntent: intent=" + intent);
+        Logger.d("onNewIntent: intent=" + intent + ", activity=" + this + ", taskId=" + this.getTaskId());
     }
 }

@@ -72,6 +72,14 @@
             android:taskAffinity="com.verifone.androidbase.newtask"
             android:screenOrientation="locked">
         </activity>
+        <activity
+            android:name=".ui.launchMode.SingleInstanceModeActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="locked">
+        </activity>
+
+
     </application>
 
 </manifest>

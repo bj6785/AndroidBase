@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 import com.orhanobut.logger.Logger;
 import com.verifone.androidbase.R;
 import com.verifone.androidbase.ui.LaunchModeActivity;
 
-public class StandardModeActivity extends AppCompatActivity {
+public class SingleInstanceModeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +18,7 @@ public class StandardModeActivity extends AppCompatActivity {
     }
 
     public void onJumpMySelf(View view) {
-        Intent intent = new Intent(this, StandardModeActivity.class);
+        Intent intent = new Intent(this, SingleInstanceModeActivity.class);
         startActivity(intent);
     }
 
@@ -31,5 +30,6 @@ public class StandardModeActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         Logger.d("onNewIntent: intent=" + intent + ", activity=" + this + ", taskId=" + this.getTaskId());
+
     }
 }
