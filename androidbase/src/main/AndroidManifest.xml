@@ -3,6 +3,7 @@
           package="com.verifone.androidbase">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
@@ -15,6 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver android:name=".BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -68,8 +74,8 @@
             android:name=".ui.launchMode.SingleTaskModeActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:taskAffinity="com.verifone.androidbase.newtask"
-            android:screenOrientation="locked">
+            android:screenOrientation="locked"
+            android:taskAffinity="com.verifone.androidbase.newtask">
         </activity>
         <activity
             android:name=".ui.launchMode.SingleInstanceModeActivity"
