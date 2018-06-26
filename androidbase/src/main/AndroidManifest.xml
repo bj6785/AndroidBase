@@ -83,6 +83,12 @@
             android:launchMode="singleInstance"
             android:screenOrientation="locked">
         </activity>
+        <activity
+            android:name=".ui.PopupWindowActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="locked">
+        </activity>
 
 
     </application>

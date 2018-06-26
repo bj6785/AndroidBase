@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.verifone.androidbase.ui.ExpandListViewActivity;
 import com.verifone.androidbase.ui.LaunchModeActivity;
 import com.verifone.androidbase.ui.ListViewActivity;
+import com.verifone.androidbase.ui.PopupWindowActivity;
 import com.verifone.androidbase.ui.SlideListActivity;
 
 public class UiActivity extends AppCompatActivity implements View.OnClickListener {
@@ -17,6 +18,7 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
     private Button ui_expand_list_bt;
     private Button ui_slide_list_bt;
     private Button ui_launch_mode_bt;
+    private Button ui_popwindow_bt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +27,13 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
         ui_expand_list_bt = (Button) findViewById(R.id.ui_expand_list_bt);
         ui_slide_list_bt = (Button) findViewById(R.id.ui_slide_list_bt);
         ui_launch_mode_bt = (Button) findViewById(R.id.ui_launch_mode_bt);
+        ui_popwindow_bt = (Button) findViewById(R.id.ui_popup_window_bt);
 
         ui_list_bt.setOnClickListener(this);
         ui_expand_list_bt.setOnClickListener(this);
         ui_slide_list_bt.setOnClickListener(this);
         ui_launch_mode_bt.setOnClickListener(this);
+        ui_popwindow_bt.setOnClickListener(this);
     }
 
     @Override
@@ -50,6 +54,10 @@ public class UiActivity extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.ui_slide_list_bt:
                 intent.setClass(UiActivity.this, SlideListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ui_popup_window_bt:
+                intent.setClass(UiActivity.this, PopupWindowActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -35,4 +35,11 @@
         android:text="SlideDeleteListView"
         android:textAllCaps="false"
         android:textSize="20sp"/>
+    <Button
+        android:id="@+id/ui_popup_window_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PopupWindowView"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
 </LinearLayout>
