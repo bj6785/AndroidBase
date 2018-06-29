@@ -1,1 +1,1 @@
-include ':androidbase', ':androidbase2'
+include ':androidbase', ':androidbase2', ':jnitest'
