@@ -15,7 +15,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                cppFlags "-fexceptions"
+                cppFlags "-fexceptions" // -fexceptions编译选项方可编译带异常处理的C++代码
                 abiFilters "armeabi-v7a"
             }
         }
