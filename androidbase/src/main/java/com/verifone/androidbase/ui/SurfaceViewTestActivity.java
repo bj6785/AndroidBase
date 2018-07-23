@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -62,20 +63,32 @@ public class SurfaceViewTestActivity extends AppCompatActivity {
         @Override
         public void run() {
             Log.d("TAG", "myRunable: " + Thread.currentThread().getName());
+            int count = 0;
+            Canvas canvas;
             while (isRun) {
-                int count = 0;
-                Canvas canvas = null;
+                if (count > 10) {
+                    Log.d("TAG", "退出绘制线程");
+                    break;
+                }
                 synchronized (mHolder) {
                     canvas = mHolder.lockCanvas();
                     canvas.drawColor(Color.WHITE);
                     Paint p = new Paint(); //创建画笔
                     p.setColor(Color.BLACK);
                     p.setTextSize(100);
-                    canvas.drawText("这是第"+(count++)+"秒", 300, 400, p);
+                    Log.d("TAG", "这是第" + count + "秒");
+                    canvas.drawText("这是第" + (count++) + "秒", 0, 400, p);
+
+                    Rect rect = new Rect(100, 50, 520, 250);
+                    canvas.drawRect(rect, p);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                    } finally {
+                        if (canvas != null) {
+                            mHolder.unlockCanvasAndPost(canvas);//结束锁定画图，并提交改变。
+                        }
                     }
                 }
             }
