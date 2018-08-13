@@ -4,49 +4,95 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <Button
-        android:id="@+id/ui_launch_mode_bt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LaunchMode"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/ui_list_bt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ListView"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
+        <Button
+            android:id="@+id/ui_launch_mode_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="LaunchMode"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
 
-    <Button
-        android:id="@+id/ui_expand_list_bt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ExpandListView"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
+        <Button
+            android:id="@+id/ui_list_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ListView"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
 
-    <Button
-        android:id="@+id/ui_slide_list_bt"
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SlideDeleteListView"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
-    <Button
-        android:id="@+id/ui_popup_window_bt"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ui_expand_list_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ExpandListView"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
+
+        <Button
+            android:id="@+id/ui_slide_list_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SlideDeleteListView"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PopupWindowView"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
-    <Button
-        android:id="@+id/ui_surface_view_bt"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ui_popup_window_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PopupWindowView"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
+
+        <Button
+            android:id="@+id/ui_surface_view_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SurfaceViewTest"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SurfaceViewTest"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ui_customView_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="customViewTest"
+            android:textAllCaps="false"
+            android:textSize="10sp"/>
+
+    </LinearLayout>
 </LinearLayout>

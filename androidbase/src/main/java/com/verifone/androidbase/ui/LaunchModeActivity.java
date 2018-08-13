@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.orhanobut.logger.Logger;
+import com.blankj.ALog;
 import com.verifone.androidbase.R;
 import com.verifone.androidbase.ui.launchMode.SingleInstanceModeActivity;
 import com.verifone.androidbase.ui.launchMode.SingleTaskModeActivity;
@@ -28,7 +28,7 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_ui);
-        Logger.d("onCreate: " + this.toString() + ", taskId=" + this.getTaskId());
+        ALog.d("onCreate: " + this.toString() + ", taskId=" + this.getTaskId());
 
         modeStandard = findViewById(R.id.launch_mode_standard);
         modeStandard.setOnClickListener(this);
@@ -77,6 +77,6 @@ public class LaunchModeActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onNewIntent(Intent intent) {
-        Logger.d("onNewIntent: intent=" + intent + ", activity=" + this + ", taskId=" + this.getTaskId());
+        ALog.d("onNewIntent: intent=" + intent + ", activity=" + this + ", taskId=" + this.getTaskId());
     }
 }
